@@ -36,7 +36,7 @@ session_start();
 
                   },error:function(d1)
                   {
-                    alert("Error"+d1);
+                    alert("HOD already exist for this department"+d1);
                     console.log(d1);
                   }
               });
@@ -80,7 +80,7 @@ session_start();
                             </li>
                                  <li><a href="assign_hod.php"><i class="menu-icon icon-paste"></i>Assign HOD</a></li>
                                     </li>
-                                 <li><a href="add_course.php"><i class="menu-icon icon-paste"></i>Add Courses</a></li>
+                             
                                     </li>
                                  <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>

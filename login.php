@@ -18,7 +18,7 @@
             		$user_name=$("#user_name").val();
             			$password=$("#password").val();
             			if($user_name==""||$password=="")
-            			{swal('Field missing' );
+            			{swal('Empty Fields' );
             				//alert('Field missing'); 
             			    return;
             			}
@@ -36,29 +36,32 @@
           	      	}
           	      	else if(datas.Msg==2)
           	      	{
-          	      		window.location="_HOD/DESIGN/dashboard.php";
+          	      		window.location="HOD/DESIGN/dashboard.php";
           	      	}
           	      	else if(datas.Msg==3)
           	      	{
-          	      		window.location="_PRINCIPAL/dashboard.php";
+          	      		window.location="PRINCIPAL/dashboard.php";
           	      	}
           	      	else if(datas.Msg==4)
           	      	{
-          	      		window.location="_TEACHER/DESIGN/dashboard.php";
+          	      		window.location="TEACHER/DESIGN/dashboard.php";
           	      	}
           	      },error:function(d1)
           	      {    if(d1=="[object Object]")
           	              {
           	              	swal("Invalid username or password.!");
           	              } 
+          	                        	              	//window.location="login.php";
+
           	      	console.log(d1);
+
           	      }
           	  });
       });
             });
         </script>
 </head>
-<body background="images/login.jpg">
+<body>
 	
 
 	<div class="navbar navbar-fixed-top">
@@ -68,11 +71,11 @@
 					<i class="icon-reorder shaded"></i>
 				</a>
 			  	<a class="brand" href="index.html">
-			  		STUDENT TRACKING SYSTEM	</a>
+			  		STUDENT DATA TRACKING SYSTEM	</a>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">				
 					<ul class="nav pull-right">
-						<li><a href="admin_register.php">
+						<li><a href="admin_registration.php">
 							Sign Up
 						</a></li>					
 						<li><a href="#">
@@ -109,13 +112,14 @@
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<button type="button" id="Btn_login" class="btn btn-primary pull-right">Login</button>
-									<label class="checkbox">
-										<input type="checkbox"> Remember me
-									</label>
+									<button type="button" id="Btn_login" class="btn btn-success pull-right">Login</button>
+									<div class="pull-left">
+                  <a href="index.php" class="btn btn-primary pull-left">BACK</a>
+                </div>
+						</div>
 								</div>
 							</div>
-						</div>
+
 					</form>
 				</div>
 			</div>

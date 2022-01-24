@@ -52,7 +52,8 @@ if($result->num_rows > 0)
    $_SESSION["place"]=$row["place"];
    $_SESSION["dob"]=$row["dob"];
    $_SESSION["dept_name"]=$row["dept_name"];
-   $_SESSION["status"]=$row["status"];
+      $_SESSION["status"]=$row["status"];
+
    $ob=array('Msg'=> 2);
   echo json_encode($ob);
   return;
@@ -92,6 +93,8 @@ if($result->num_rows > 0)
    $_SESSION["place"]=$row["place"];
    $_SESSION["dob"]=$row["dob"];
       $_SESSION["dept_name"]=$row["dept_name"];
+            $_SESSION["status"]=$row["status"];
+
    $ob=array('Msg'=> 4);
   echo json_encode($ob);
   return;

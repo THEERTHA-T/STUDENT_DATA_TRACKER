@@ -33,6 +33,7 @@ if($result->num_rows > 0)
  else
  {
   $sql="insert into users (first_name,last_name,user_name,user_type,password,phone_no,email_id,college_name,qualification,dob,place,dept_name) values('".$first_name."','".$last_name."','".$user_name."','".$user_type."','".$password."','".$phone_no."','".$email_id."','".$college_name."','".$qualification."','".$dob."','".$place."','".$dept_name."')";
+  
   if($conn->query($sql)=== TRUE)
   {
   

@@ -111,7 +111,7 @@ session_start();
                             </li>
                                   <li><a href="assign_hod.php"><i class="menu-icon icon-paste"></i>Assign HOD</a></li>
                                     </li>
-                                 <li><a href="add_course.php"><i class="menu-icon icon-paste"></i>Add Courses</a></li>
+                                
                                     </li>
                                  <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
@@ -262,7 +262,7 @@ session_start();
               <div class="control-group">
                 <div class="span5">
                   <div class="pull-left">
-                  <a href="index.php" class="btn btn-primary pull-left">BACK</a>
+                  <a href="dashboard.php" class="btn btn-primary pull-left">BACK</a>
                 </div>
                   <input type="BUTTON" class="btn btn-success pull-right" value="REGISTER" id="Btn_register" >
                   

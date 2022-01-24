@@ -20,7 +20,7 @@ $sql="UPDATE department SET hod='".$hod."' where dept_name='".$dept_name."'";
   if($conn->query($sql)=== TRUE)
   {
   
-    $sql1="UPDATE users SET user_type='HOD' where user_name='".$hod."'"; 
+    $sql1="UPDATE users SET status='HOD' where user_name='".$hod."'"; 
     $conn->query($sql1); 
     $ob=array('Msg'=>'SUCCESSFULLY ADDED');
   	echo json_encode($ob);

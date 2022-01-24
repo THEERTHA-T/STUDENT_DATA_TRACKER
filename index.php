@@ -17,7 +17,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">STUDENT TRACKING SYSTEM </a>
+                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">STUDENT DATA TRACKING SYSTEM </a>
                     <!-- /.nav-collapse -->
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <div class="content">
                        
                                 <h1><center>
-                                    WELCOME TO STUDENT TRACKER</center>
+                                    WELCOME TO STUDENT DATA TRACKER</center>
                                 </h1>
                             </div>
                         </div>

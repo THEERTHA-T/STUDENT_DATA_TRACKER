@@ -64,7 +64,7 @@ if(!$_SESSION["user_name"])
                             </li>
                                  <li><a href="assign_hod.php"><i class="menu-icon icon-paste"></i>Assign HOD</a></li>
                                     </li>
-                                 <li><a href="add_course.php"><i class="menu-icon icon-paste"></i>Add Courses</a></li>
+                              
                                     </li>
                                  <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
