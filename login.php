@@ -46,6 +46,10 @@
           	      	{
           	      		window.location="TEACHER/DESIGN/dashboard.php";
           	      	}
+          	      	else if(datas.Msg==5)
+          	      	{
+          	      		window.location="STUDENT/DESIGN/dashboard.php";
+          	      	}
           	      },error:function(d1)
           	      {    if(d1=="[object Object]")
           	              {

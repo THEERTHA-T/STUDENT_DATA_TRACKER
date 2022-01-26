@@ -10,7 +10,7 @@ if($conn->connect_error)
 	echo json_encode($ob);
 	return;
 }
-$sql="select * from users where user_name='".$user_name."' and password='".$password."'";
+$sql="select * from users where user_name='".$user_name."' and password='".$password."' ";
 $result=$conn ->query($sql);
 if($result->num_rows > 0)
  {
@@ -99,8 +99,29 @@ if($result->num_rows > 0)
   echo json_encode($ob);
   return;
      }
+      else if($row["user_type"]=="Student")
+     {
+
+      session_start();
+   $_SESSION["user_name"]=$row["user_name"];
+   $_SESSION["user_type"]=$row["user_type"];
+   $_SESSION["fname"]=$row["first_name"];
+   $_SESSION["lname"]=$row["last_name"];
+   $_SESSION["email_id"]=$row["email_id"];
+  //$_SESSION["house_name"]=$row["house_name"];
+   //$_SESSION["district"]=$row["district"];
+
+   $_SESSION["phone_no"]=$row["phone_no"];
+   $_SESSION["password"]=$row["password"];
+   $_SESSION["place"]=$row["place"];
+   $_SESSION["dob"]=$row["dob"];
+   $_SESSION["dept_name"]=$row["dept_name"];
+   $ob=array('Msg'=> 5);
+  echo json_encode($ob);
+  return;
+     }
  }
- } 
+  }
  else
  {
  $ob = array('Msg'=> 'Admin does not exist');

@@ -42,6 +42,8 @@
                        
                               <li><a href="login.php"><i class="menu-icon icon-bullhorn"></i>Login</a>
                             </li>
+                             <li><a href="stud_login.php"><i class="menu-icon icon-bullhorn"></i>Student Login</a>
+                            </li>
                          </ul>
                          <br>
                            <ul class="widget widget-menu ">
