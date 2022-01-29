@@ -89,6 +89,8 @@ session_start();
                             </li>
                               <li><a href="course.php"><i class="menu-icon icon-bullhorn"></i>Add Course</a>
                             </li>
+                             <li><a href="subject.php"><i class="menu-icon icon-bullhorn"></i>Manage Subject</a>
+                            </li>
                             <li><a href="assign_tutor.php"><i class="menu-icon icon-bullhorn"></i>Assign Tutor</a>
                             </li>                                                 
                     </ul>

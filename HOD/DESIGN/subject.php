@@ -16,25 +16,27 @@ session_start();
             <script >
             $(document).ready(function() { 
               $("#Btn_submit").click(function(){
-                $dept_name=$("#dept_name").val();
+                                $dept_name=$("#dept_name").val();
                 $course_name=$("#course_name").val();
-              $sem=$("#sem").val();
-                $tutor_name=$("#tutor_name").val();
-                  if($dept_name==""||$course_name==""||$sem==""||$tutor_name=="") 
+                $sem=$("#sem").val();
+                $sub_code=$("#sub_code").val();
+              $sub_name=$("#sub_name").val();
+              $teacher_name=$("#teacher_name").val();
+                  if($course_name==""||$sem==""||$sub_code==""||sub_name==""||teacher_name=="") 
              { 
-               alert("mandatory fields missing");
+               alert("Mandatory fields missing");
                return;
                }
              
           $.ajax({
-                  url:"../CODE/assign_tutor_code.php",
-                  data:{'dept_name' : $dept_name,  'course_name' : $course_name,'sem':$sem,'tutor_name':$tutor_name},
+                  url:"../CODE/subject_code.php",
+                  data:{'dept_name' : $dept_name,  'course_name' : $course_name,'sem':$sem,'sub_code':$sub_code,'sub_name':$sub_name,'teacher_name':$teacher_name},
                   dataType:"json",
                   type:"post",
                   success:function(datas) {
 
                     alert(datas.Msg);
-                    window.location="assign_tutor.php";
+                    window.location="subject.php";
 
                   },error:function(d1)
                   {
@@ -63,7 +65,7 @@ session_start();
 		</div><!-- /navbar-inner -->
 	</div><!-- /navbar -->
 	
-           <div class="wrapper">
+         <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
@@ -79,11 +81,11 @@ session_start();
                             </li>
                              <li><a href="subject.php"><i class="menu-icon icon-bullhorn"></i>Manage Subject</a>
                             </li>
-                            <li><a href="student_registration.php"><i class="menu-icon icon-bullhorn"></i>Assign Tutor</a>
+                            <li><a href="assign_tutor.php"><i class="menu-icon icon-bullhorn"></i>Assign Tutor</a>
                             </li>                                                 
                     </ul>
                             <ul class="widget widget-menu unstyled">
-                                 <li><a href="report_generation.php"><i class="menu-icon icon-bullhorn"></i>View Report</a>
+                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Report</a>
                             </li>
                                
                                     </li>
@@ -95,37 +97,34 @@ session_start();
                     </div>
                     <!--/.sidebar-->
                 </div>
-				<div class="span9">
+				<div class="span7">
 					<div class="content">
 						<div class="module">
 							<div class="module-head">
 								<H1>	<font color="green">							
-								 ASSIGN TUTOR</font> </H1>
+								 ADD SUBJECT DETAILS</font> </H1>
 							</div>
-							<div class="module-body">
-								<div class="control-group">
+						
+                    <div class="module-body">
+                <div class="control-group">
                       <label class="control-label" for="basicinput"></label>
                       <div class="controls">
-                       <br> <input type="hidden"  id="institution_name" placeholder="Institution Name..." class="span7"  value='<?php echo $_SESSION["college_name"]?>' >
+                      Department Name: <br> <input type="text" id="dept_name" readonly="" placeholder="Dept name" class="span5"  value='<?php echo $_SESSION["dept_name"]?>' >
                       </div>
                     </div>
-                     <div class="controls">
-                                                Department Name :<br> <input type="text" id="dept_name" placeholder="Department Name" readonly="" class="span5" value='<?php echo $_SESSION['dept_name'];?>'>
-                                                
-                                            </div>
-
-                      <?php
-                       $dept_name= $_SESSION["dept_name"];
+                     <?php
                     include 'db_config.php';
                     $conn=new mysqli($servername,$dbusername,$password1,$dbname);
-                   $sql="select * from course where dept_name ='".$dept_name."'  ";
+                                           $dept_name= $_SESSION["dept_name"];
+
+                   $sql="select * from course where dept_name='".$dept_name."';";
                     $result=$conn->query($sql);
                     ?>
                   
                       <div class="controls">
                         Course Name : <br>
                         <select tabindex="1" id="course_name"  class="span5">
-                          <option selected="">Select Course</option>
+                          <option selected="">Select course</option>
                           <?php 
                           if($result->num_rows>0)
                           {
@@ -137,35 +136,46 @@ session_start();
                           ?>
                           
                         </select>                        
-                      </div>        
-
+                      </div>
                      <div class="control-group">
                       <label class="control-label" for="basicinput"></label>
                       <div class="controls">
-                       Semester :<br> 
+                       Select Semester :<br> 
                         <select tabindex="1" id="sem" data-placeholder="Select" class="span5">
-                          <option selected>Select semester</option>
+                          <option selected>Select Semester</option>
                           <option >1</option>
                           <option >2</option>   
                          <option >3</option>                                               
                           <option >4</option>                                                 
                           <option >5</option>                                                 
-                                              
+                          <option >6</option>                                                             
                            </select>
                         
-                      </div>        
-                       <?php
+                      </div>
+                        <div class="control-group">
+                      <label class="control-label" for="basicinput"></label>
+                      <div class="controls">
+                      Subject Code :<br><input type="text"  id="sub_code" placeholder=" Subject Code   " class="span5" >
+                        
+                      </div>
+                         <div class="control-group">
+                      <label class="control-label" for="basicinput"></label>
+                      <div class="controls">
+                      Subject Name :<br><input type="text"  id="sub_name" placeholder=" Subject Name   " class="span5" >
+                        
+                      </div>
+                        <?php
                        $dept_name= $_SESSION["dept_name"];
                     include 'db_config.php';
                     $conn=new mysqli($servername,$dbusername,$password1,$dbname);
-                   $sql="select * from users where dept_name ='".$dept_name."'  ";
+                   $sql="select * from users where dept_name ='".$dept_name."' and user_type='Teacher' ";
                     $result=$conn->query($sql);
                     ?>
                   
                       <div class="controls">
-                        Tutor Name : <br>
+                        Teacher Name : <br>
                         <select tabindex="1" id="tutor_name"  class="span5">
-                          <option selected="">Select Course</option>
+                          <option selected="">Select Teacher</option>
                           <?php 
                           if($result->num_rows>0)
                           {
@@ -179,13 +189,11 @@ session_start();
                         </select>                        
                       </div>        
 
-                  
-                    
                                                           <div class="controls clearfix">
                                         	<div class="pull-left">
                   <a href="dashboard.php" class="btn btn-primary pull-left">BACK</a>
                 </div>
-                                    <button type="button" id="Btn_submit" class="btn btn-danger pull-right">ADD</button>                       </div>                
+                                    <button type="button" id="Btn_submit" class="btn btn-success pull-right">ADD SUBJECT</button>                       </div>                
 								</div><!--/.stream-list-->
 							</div><!--/.module-body-->
 						</div><!--/.module-->
