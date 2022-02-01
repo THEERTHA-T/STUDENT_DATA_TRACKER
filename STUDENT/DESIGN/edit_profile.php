@@ -63,7 +63,9 @@ session_start();
                     window.location="../../stud_login.php";
                   },error:function(d1)
                   {
-                    alert(""+d1);
+                    alert("OK done");
+                                        window.location="../../stud_login.php";
+
                     console.log(d1);
                   }
               });   
@@ -93,25 +95,21 @@ session_start();
                 <div class="span3">
                     <div class="sidebar">
 
-                        <ul class="widget widget-menu unstyled">
+                         <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                            <li><a href="student_registration.php"><i class="menu-icon icon-bullhorn"></i>Student Registration</a>
+                            <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
-                            <li><a href="mark_entry.php"><i class="menu-icon icon-book"></i> Mark Entry </a></li>
+                            <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
 
-                            
-                    </ul>
-                            <ul class="widget widget-menu unstyled">
-                                 <li><a href="report_generation.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
-                            </li>
+                   
                                
                                     </li>
                                                                     </li>
-                                 <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
+                                
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>
@@ -163,9 +161,10 @@ session_start();
                                                Admission Date :<input  type="Date" id="admn_date"  placeholder="Admission Date " class="span5" value=<?php echo $_SESSION['admn_date'];?>  >
                                         </div>
 
-  <div class="controls">
-                                               Department Name :<input  type="text" id="dept_name"  placeholder="department name" class="span5" value=<?php echo $_SESSION['dept_name'];?>  >
-                                        </div>
+                                          <div class="controls">
+                                                              Department:<br><input  type="text" id="course_name"  readonly="" placeholder="course name" class="span5" value= 
+                                                      "<?php echo $_SESSION ["dept_name"]?>" >
+                                                    </div>
                                          <div class="controls">
                                                Course Name :<input  type="text" id="course_name"  placeholder="course name" class="span5" value=<?php echo $_SESSION['course_name'];?>  >
                                         </div>

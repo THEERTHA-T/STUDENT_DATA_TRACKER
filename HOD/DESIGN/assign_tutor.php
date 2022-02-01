@@ -83,6 +83,7 @@ session_start();
                             </li>                                                 
                     </ul>
                             <ul class="widget widget-menu unstyled">
+                                 <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark view </a></li>
                                  <li><a href="report_generation.php"><i class="menu-icon icon-bullhorn"></i>View Report</a>
                             </li>
                                

@@ -126,6 +126,7 @@ session_start();
                     </ul>
                             <ul class="widget widget-menu unstyled">
                                <li><a href="int_mark_entry.php"><i class="menu-icon icon-book"></i> Internal Mark Entry </a></li>
+                                <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark  View</a></li>
 
                                  <li><a href="report_generation.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
                             </li>
@@ -238,7 +239,7 @@ session_start();
                       <label class="control-label" for="basicinput"></label>
                       <div class="controls">
                          Total Series Mark:<br>
-                        <input type="text" id="tot_series" placeholder=" total mark" class="span5"  onkeyup="sum1();">
+                        <input type="text" id="tot_series" placeholder=" total mark" class="span5" readonly=""  onkeyup="sum1();">
                       </div>  
                     </div>
 
@@ -253,7 +254,7 @@ session_start();
                       <label class="control-label" for="basicinput"></label>
                       <div class="controls">
                          Total internal mark:<br>
-                        <input type="text" id="total" placeholder="Total(out of 40)" class="span5" onkeyup="sum2();">
+                        <input type="text" id="total" placeholder="Total(out of 40)" class="span5" readonly="" onkeyup="sum2();">
                       </div>  
                     </div>
               <div class="control-group">
