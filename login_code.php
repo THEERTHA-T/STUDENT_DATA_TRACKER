@@ -78,6 +78,27 @@ if($result->num_rows > 0)
 	echo json_encode($ob);
 	return;
      }
+           else if($row["user_type"]=="Teacher" && $row["status"]=="Tutor")
+     {
+      session_start();
+   $_SESSION["user_name"]=$row["user_name"];
+   $_SESSION["user_type"]=$row["user_type"];
+   $_SESSION["first_name"]=$row["first_name"];
+   $_SESSION["last_name"]=$row["last_name"];
+   $_SESSION["college_name"]=$row["college_name"];
+   $_SESSION["email_id"]=$row["email_id"];
+   $_SESSION["phone_no"]=$row["phone_no"];
+   $_SESSION["password"]=$row["password"];
+   $_SESSION["qualification"]=$row["qualification"];
+   $_SESSION["place"]=$row["place"];
+   $_SESSION["dob"]=$row["dob"];
+   $_SESSION["dept_name"]=$row["dept_name"];
+      $_SESSION["status"]=$row["status"];
+
+   $ob=array('Msg'=> 4);
+  echo json_encode($ob);
+  return;
+     }
      else if($row["user_type"]=="Teacher")
      {
       session_start();
@@ -95,11 +116,11 @@ if($result->num_rows > 0)
       $_SESSION["dept_name"]=$row["dept_name"];
             $_SESSION["status"]=$row["status"];
 
-   $ob=array('Msg'=> 4);
+   $ob=array('Msg'=> 5);
   echo json_encode($ob);
   return;
      }
-      
+     
  }
   }
  else

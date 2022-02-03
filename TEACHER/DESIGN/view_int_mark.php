@@ -74,8 +74,7 @@ $d_query=mysqli_query($conn,$dept);
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                            <li><a href="student_registration.php"><i class="menu-icon icon-bullhorn"></i>Student Registration</a>
-                            </li>
+                          
                             <li><a href="mark_entry.php"><i class="menu-icon icon-book"></i> Mark Entry </a></li>
 
                             
@@ -96,6 +95,7 @@ $d_query=mysqli_query($conn,$dept);
                     </div>
                     <!--/.sidebar-->
                 </div>
+                <!--/.span3-->
         <div class="span9">
           <div class="content">
             <div class="module">

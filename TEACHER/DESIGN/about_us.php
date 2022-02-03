@@ -42,7 +42,7 @@ if(!$_SESSION["user_name"])
             </div>
             <!-- /navbar-inner -->
         </div>
-  <div class="wrapper">
+ <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
@@ -54,15 +54,14 @@ if(!$_SESSION["user_name"])
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                            <li><a href="student_registration.php"><i class="menu-icon icon-bullhorn"></i>Student Registration</a>
-                            </li>
+                          
                             <li><a href="mark_entry.php"><i class="menu-icon icon-book"></i> Mark Entry </a></li>
 
                             
                     </ul>
                             <ul class="widget widget-menu unstyled">
                                <li><a href="int_mark_entry.php"><i class="menu-icon icon-book"></i> Internal Mark Entry </a></li>
-                                     <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark  View</a></li>
+                                 <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark  View</a></li>
 
                                  <li><a href="report_generation.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
                             </li>

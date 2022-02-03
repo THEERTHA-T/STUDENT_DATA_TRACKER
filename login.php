@@ -44,6 +44,10 @@
           	      	}
           	      	else if(datas.Msg==4)
           	      	{
+          	      		window.location="TUTOR/DESIGN/dashboard.php";
+          	      	}
+          	      		else if(datas.Msg==5)
+          	      	{
           	      		window.location="TEACHER/DESIGN/dashboard.php";
           	      	}
           	      

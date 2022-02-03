@@ -88,6 +88,7 @@ $d_query=mysqli_query($conn,$dept);
                                
                                     </li>
                                                                     </li>
+                                      <li><a href="add_event_1.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>  
                                  <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
