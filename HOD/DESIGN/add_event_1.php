@@ -89,6 +89,10 @@ session_start();
                                
                                     </li>
                                                                     </li>
+                                                                      <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                            </li>
+                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                            </li>
                                         <li><a href="add_event_1.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>  
                                  <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>

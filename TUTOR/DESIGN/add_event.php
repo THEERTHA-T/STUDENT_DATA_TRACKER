@@ -90,6 +90,10 @@ $d_query=mysqli_query($conn,$dept);
                                
                                     </li>
                                                                     </li>
+                                                                      <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                            </li>
+                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                            </li>
                                   <li><a href="add_event.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>   
                                       <li><a href="extra.php"><i class="menu-icon icon-paste"></i>Add extra curricular activity</a></li>         
                                  <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>

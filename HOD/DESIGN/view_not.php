@@ -1,10 +1,7 @@
-<?php 
+<?php
 session_start();
-if(!$_SESSION["user_name"])
-{
-  header("location/PROJECT/Stud_Tracker/login.php");
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,36 +15,32 @@ if(!$_SESSION["user_name"])
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>
+                 <script src="JQuery/jquery3_4_1.min.js"></script>
+    
     </head>
+    <style type="text/css">
+      .middle
+      {
+        float:left;
+        margin-left: 20%;
+      }
+    </style>
     <body>
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Student Tracking System </a>
-                      <ul class="nav pull-right">
-                           <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="images/user.png" class="nav-avatar" />
-                            <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="Editprofile.php">Edit Profile</a></li>
-                                <li><a href="#">Account Settings</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>   
-                    <!-- /.nav-collapse -->
+                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Student Data Tracking System </a>                    
                 </div>
             </div>
-            <!-- /navbar-inner -->
         </div>
-  <div class="wrapper">
+   <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
                     <div class="sidebar">
- <ul class="widget widget-menu unstyled">
+
+                       <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
@@ -73,17 +66,36 @@ if(!$_SESSION["user_name"])
                     <!--/.sidebar-->
                 </div>
                 <!--/.span3-->
-                <div class="span9">
-                    <div class="content">
-                                  <?php
+                <div class="span6">
+                    <div class="middle">                       
+                                <h1><center><font color="green">
+                                   NOTIFICATIONS</font></center>
+                                </h1>
+                               <div class="module-body">
+              <?php
 include 'db_config.php';
 
 $conn=new mysqli($servername,$dbusername,$password1,$dbname);
 
-$sql="select * from college where college_name='".$_SESSION['college_name']."' ";
+$sql="select * from notifications  ORDER BY msg_id DESC ";
 
   $result=$conn->query($sql);?>
-                       
+                <table class="table">
+                <table border="2" class="table table-striped">
+                <thead>
+                  
+            <tr>
+                   <!-- <th>Dept name </th> --> 
+                   <th>Date</th>
+                  <th>Name</th>
+                   <th>User Type</th>
+                   <th>Subject</th>
+
+                   <!-- <th>Message ID </th>  -->
+                   <th>Notification</th>
+                  
+                </tr>
+                 </thead>
 <?php
                   
    if($result->num_rows>0)
@@ -91,48 +103,45 @@ $sql="select * from college where college_name='".$_SESSION['college_name']."' "
      while($row=$result->fetch_assoc())
      {
                  
-                  echo "<center><h1><font color=red>"; 
-                  echo $row['college_name'];
-                  echo "</font></h1>";
-
-                  echo "<h3><b><br>ADDRESS :</b>";
-                  echo $row['address'];
-
-                  echo "<b><br>PLACE :</b>";
-                  echo $row['place'];
-
-                  echo "<b><br>DISTRICT :</b>";
-                  echo $row['district'];
-
-                  echo "<b><br>STATE :</b>";
-                  echo $row['state'];
-
-                  echo "<b><br>COUNTRY :</b>";
-                  echo $row['country'];
-
-                  echo "<b><br>PIN CODE :</b>";
-                  echo $row['pin_code'];
-
-                  echo "<b><br>CONTACT NUMBER :</b>";
-                  echo $row['phone_no'];
-
-                  echo "<b><br>EMAIL ID :</b>";
-                  echo $row['email_id'];
-
-                  echo "<b><br>AFFILIATION :</b>";
-                  echo $row['affiliation'];
-
-                  echo "<b><br>COLLEGE TYPE :</b>";
-                  echo $row['institution_type'];
-                  
-                  echo "</h3>";
+                  echo "<tbody>";
+                  echo "<tr>";
+                  //echo "<td>".$row['dname']." </td>";
+                   echo "<td>".$row['date1']."</td>";
+                  echo "<td>".$row['user_name']." </td>";
+                  echo "<td>".$row['user_type']." </td>";
+                  echo "<td>".$row['sub']." </td>";
+                   echo "<td>".$row['msg']."</td>";
+                    
+                  echo "</tr>";
+                echo "</tbody>";
                 }
               }
               
-                    ?>    
-</div>
-</div>
+                    ?>               
+                </table>
 
+                <br />
+                <!-- <hr /> -->
+                <br />
+
+                
+            
+
+           
+            </div></table>            </div><!--/.module-->
+
+          <br />                             
+                                                                
+                                </div>
+                            </div>            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+   </div>
+</div>
+</div>
         <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
         <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -140,8 +149,16 @@ $sql="select * from college where college_name='".$_SESSION['college_name']."' "
         <script src="scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
         <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="scripts/common.js" type="text/javascript"></script>
-      
-
     </body>
 </head>
 </html>
+
+
+
+
+
+
+
+
+
+

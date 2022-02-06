@@ -19,36 +19,28 @@ session_start();
             <script >
             $(document).ready(function() { 
               $("#Btn_save").click(function(){
-                $first_name=$("#first_name").val();
-                  $last_name=$("#last_name").val();
+              
                 $user_name=$("#user_name").val();
                 $user_type=$("#user_type").val();
-                $qualification=$("#qualification").val();
-                $dob=$("#dob").val();
-              $password=$("#password").val();
-                $cpassword=$("#cpassword").val();
-                $place=$("#place").val();
-                $phone_no=$("#phone_no").val();
-              $email_id=$("#email_id").val();
-              $college_name=$("#college_name").val();
-              $dept_name=$("#dept_name").val();
-              $status=$("#status").val();
-
-              if($password!=$cpassword)
-             {
-               alert("password mismatch");
+                $date1=$("#date1").val();
+                $sub=$("#sub").val();
+              $msg=$("#msg").val();
+              
+  if($user_name==""||$user_type==""||$date1==""||$sub==""||$msg=="") 
+             { 
+               alert("Mandatory Fields Missing");
                return;
-             }
-            
-          $.ajax({
-                  url:"../CODE/edit_profile_code.php",
-                  data:{'first_name' : $first_name, 'last_name' : $last_name, 'user_name' : $user_name,'user_type' : $user_type,'qualification' : $qualification,'dob' : $dob,'password':$password,'place' : $place,'phone_no':$phone_no,'email_id':$email_id,'college_name':$college_name,'dept_name' : $dept_name,'status':$status},
+               }
+             
+                $.ajax({
+                  url:"../CODE/add_not_code.php",
+                  data:{'user_name' : $user_name,'user_type' : $user_type,'date1' : $date1,'sub' : $sub,'msg':$msg},
                   dataType:"json",
                   type:"post",
                   success:function(datas) {
 
                     alert(datas.Msg);
-                    window.location="../../login.php";
+                    window.location="add_not.php";
                   },error:function(d1)
                   {
                     alert(""+d1);
@@ -71,7 +63,7 @@ session_start();
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Student Tracking System </a>                    
+                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Student Data Tracking System </a>                    
                 </div>
             </div>
         </div>
@@ -121,53 +113,28 @@ session_start();
                                             <div class="controls">
                                                User Type :  <input type="text" id="user_type" placeholder="UserType" class="span5" value='<?php echo $_SESSION['user_type'];?>' >                                                
                                             </div>
-                                            <div class="controls">
-                                                First Name : <input  type="text" id="first_name" placeholder="First Name" class="span5" value=<?php echo $_SESSION['first_name'];?>  >
-                                        </div>
-                                        <div class="controls">
-                                                Last Name : <input  type="text" id="last_name" placeholder="Last Name" class="span5" value=<?php echo $_SESSION['last_name'];?> >
-                                        </div>
+                                          
                                             <div class="controls">
                                                 User Name : <input  type="text" id="user_name"  placeholder="UserName" class="span5" value=<?php echo $_SESSION['user_name'];?>  >
                                         </div> 
-                                          <div class="controls">
-                                                Qualification :<input  type="text" id="qualification"  placeholder="qualification" class="span5" value=<?php echo $_SESSION['qualification'];?>  >
-                                        </div>  
-                                         <div class="controls">
-                                                Date of Birth :<input  type="text" id="dob"  placeholder="yyyy-mm-dd" class="span5" value=<?php echo $_SESSION['dob'];?>  >
-                                        </div>               
+                                                      
                                         <div class="controls">
-                                              Change Password :<input type="password" id="password" placeholder="password" class="span5" >          
+                                              Subject :<input type="text" id="sub" placeholder="subject" class="span5" >          
                                             </div>
                                             <div class="controls">
-                                                Confirm Password :<input type="password" id="cpassword" placeholder="Confirm password" class="span5" >
+                                                 Date :<input type="Date" id="date1" placeholder=" Date" class="span5" >
                                                 
                                             </div>
                                               <div class="controls">
-                                                Place : <br> <input  type="text" id="place"  placeholder="place" class="span5" value=<?php echo $_SESSION['place'];?>  >
+                                                Message : <br> <input  type="text" id="msg"  placeholder="message" class="span5"  >
                                         </div> 
-                                            <div class="controls">
-                                                Email ID :<br> <input  type="text" id="email_id"  placeholder="Email id" class="span5" value=<?php echo $_SESSION['email_id'];?> >
-                                        </div>
-                                        <div class="controls">
-                                                Phone Number : <input  type="text" id="phone_no"  placeholder="Phone Number"class="span5" value=<?php echo $_SESSION['phone_no'];?> >
-                                        </div>
-                                            <div class="controls">
-                                                College Name : <input type="text" id="college_name" placeholder="Institution Name"class="span5" value='<?php echo $_SESSION['college_name'];?>' readonly="">
-                                                
-                                            </div>
-                                             <div class="controls">
-                                                Department Name : <input type="text" id="dept_name" placeholder="Department Name"class="span5" value='<?php echo $_SESSION['dept_name'];?>'>
-                                                
-                                            </div>
                                             
-
                                             <div class="control-group">
                                   <div class="controls clearfix">
                                     <div class="pull-left">
                   <a href="dashboard.php" class="btn btn-primary pull-left">BACK</a>
                 </div>
-                                    <button type="button" id="Btn_save" class="btn btn-success pull-right">SAVE</button>                          
+                                    <button type="button" id="Btn_save" class="btn btn-success pull-right">ADD NOTIFICATION</button>                          
                                 </div>
                             </div>            
                                     </div>
