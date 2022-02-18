@@ -46,14 +46,13 @@ session_start();
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                            <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
+                            <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
-                                <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                                <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
                             </li>
-                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
-                            </li>
+                          
                             <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
-
+<li><a href="all_sem_mark.php"><i class="menu-icon icon-book"></i> All Sem Mark</a></li>
                    
                                
                                     </li>
@@ -64,8 +63,7 @@ session_start();
                             </ul>
                     </div>
                     <!--/.sidebar-->
-                </div>
-                <!--/.span3-->
+                </div>             <!--/.span3-->
                 <div class="span6">
                     <div class="middle">                       
                                 <h1><center><font color="green">

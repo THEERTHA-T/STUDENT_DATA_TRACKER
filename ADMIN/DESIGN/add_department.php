@@ -132,8 +132,53 @@ session_start();
 								</div><!--/.stream-list-->
 							</div><!--/.module-body-->
 						</div><!--/.module-->
+             <div class="module-body">
+
+      <br><br>
+     <h1>DEPARTMENT LIST</h1><br><br>
+              <?php
+include 'db_config.php';
+
+$conn=new mysqli($servername,$dbusername,$password1,$dbname);
+
+$sql="select * from department order by dept_id; ";
+
+  $result=$conn->query($sql);?>
+                <table class="table">
+                <table class="table table-striped" border="1" style="width:70%">                  
+            <tr >
+          <th>Department ID </th> 
+             <th> Department Name </th> 
+            <th>Course Count</th>
+             <th>HOD  </th>         
+                                
+  
+                  
+                </tr>
+<?php
+                  
+   if($result->num_rows>0)
+   {
+     while($row=$result->fetch_assoc())
+     {
+                 
+                  echo "<tbody>";
+                  echo "<tr>";
+                  echo "<td>".$row['dept_id']." </td>";
+                   echo "<td>".$row['dept_name']."</td>";
+                   echo "<td>".$row['course_count']."</td>";
+                    echo "<td>".$row['hod']."</td>";
+                                      
+                  echo "</tr>";
+                echo "</tbody>";
+                }
+              }
+              
+                    ?>               
+                </table>
 					</div><!--/.content-->
 				</div><!--/.span9-->
+
 			</div>
 		</div><!--/.container-->
 	</div><!--/.wrapper-->

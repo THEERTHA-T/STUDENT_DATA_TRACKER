@@ -83,7 +83,7 @@ $d_query=mysqli_query($conn,$dept);
                     </ul>
                             <ul class="widget widget-menu unstyled">
                                  <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark view </a></li>
-                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Report</a>
+                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Internal Mark Report</a>
                             </li>
                                
                                     </li>

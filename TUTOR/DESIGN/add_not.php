@@ -60,38 +60,52 @@ session_start();
     </style>
     <body>
         <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Student Data Tracking System </a>                    
-                </div>
-            </div>
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+          <i class="icon-reorder shaded"></i>
+        </a>
+          <a class="brand" href="index.html">
+            Student Data Tracking System
+          </a>
         </div>
-   <div class="wrapper">
+    </div><!-- /navbar-inner -->
+  </div><!-- /navbar -->
+  
+          <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
                     <div class="sidebar">
 
-                       <ul class="widget widget-menu unstyled">
+                        <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                            <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
+                            <li><a href="student_registration.php"><i class="menu-icon icon-bullhorn"></i>Student Registration</a>
                             </li>
-                                <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
-                            </li>
-                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
-                            </li>
-                            <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
+                            <li><a href="mark_entry.php"><i class="menu-icon icon-book"></i> Mark Entry </a></li>
 
-                   
+                            
+                    </ul>
+                            <ul class="widget widget-menu unstyled">
+                               <li><a href="int_mark_entry.php"><i class="menu-icon icon-book"></i> Internal Mark Entry </a></li>
+                                 <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark  View</a></li>
+
+                                 <li><a href="report_generation.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
+                            </li>
                                
                                     </li>
                                                                     </li>
-                                
+                                                                      <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                            </li>
+                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                            </li>
+                                  <li><a href="add_event.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>   
+                                      <li><a href="extra.php"><i class="menu-icon icon-paste"></i>Add extra curricular activity</a></li>         
+                                 <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>

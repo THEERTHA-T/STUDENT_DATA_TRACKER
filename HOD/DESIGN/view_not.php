@@ -40,32 +40,38 @@ session_start();
                 <div class="span3">
                     <div class="sidebar">
 
-                       <ul class="widget widget-menu unstyled">
+                        <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                            <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
+                             <li><a href="course.php"><i class="menu-icon icon-bullhorn"></i>Add Course</a>
+                            </li> 
+                             <li><a href="subject.php"><i class="menu-icon icon-bullhorn"></i>Manage Subject</a>
                             </li>
-                                <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                            <li><a href="assign_tutor.php"><i class="menu-icon icon-bullhorn"></i>Assign Tutor</a>
+                            </li>                                                 
+                    </ul>
+                            <ul class="widget widget-menu unstyled">
+                                  <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark view </a></li>
+                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Internal Mark Report</a>
                             </li>
-                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
-                            </li>
-                            <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
-
-                   
                                
                                     </li>
                                                                     </li>
-                                
+                                                                      <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                            </li>
+                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                            </li>
+                                    <li><a href="add_event_1.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>  
+                                 <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>
                     </div>
                     <!--/.sidebar-->
                 </div>
-                <!--/.span3-->
                 <div class="span6">
                     <div class="middle">                       
                                 <h1><center><font color="green">

@@ -48,7 +48,7 @@ if(!$_SESSION["user_name"])
                 <div class="span3">
                     <div class="sidebar">
 
-                        <ul class="widget widget-menu unstyled">
+                       <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
@@ -56,23 +56,22 @@ if(!$_SESSION["user_name"])
                             </li>
                             <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
+                                <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                            </li>
+                          
                             <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
-
-                            
-                    </ul>
-                            <ul class="widget widget-menu unstyled">
-                                 
+<li><a href="all_sem_mark.php"><i class="menu-icon icon-book"></i> All Sem Mark</a></li>
+                   
                                
                                     </li>
                                                                     </li>
-                                 <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
+                                
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>
                     </div>
                     <!--/.sidebar-->
                 </div>
-                <!--/.span3-->
                 <div class="span9">
                     <div class="content">
                                   <?php

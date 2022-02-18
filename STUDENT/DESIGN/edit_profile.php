@@ -89,13 +89,13 @@ session_start();
                 </div>
             </div>
         </div>
-   <div class="wrapper">
+ <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
                     <div class="sidebar">
 
-                         <ul class="widget widget-menu unstyled">
+                       <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
@@ -103,8 +103,11 @@ session_start();
                             </li>
                             <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
+                                <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                            </li>
+                          
                             <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
-
+<li><a href="all_sem_mark.php"><i class="menu-icon icon-book"></i> All Sem Mark</a></li>
                    
                                
                                     </li>
@@ -116,6 +119,7 @@ session_start();
                     </div>
                     <!--/.sidebar-->
                 </div>
+
                 <!--/.span3-->
                 <div class="span6">
                     <div class="middle">                       

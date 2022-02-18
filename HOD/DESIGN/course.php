@@ -84,7 +84,7 @@ session_start();
                     </ul>
                             <ul class="widget widget-menu unstyled">
                                  <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark view </a></li>
-                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Report</a>
+                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Internal Mark Report</a>
                             </li>
                                
                                     </li>
@@ -117,8 +117,9 @@ session_start();
                     </div>
                     <?php
                     include 'db_config.php';
+                                           $dept_name= $_SESSION["dept_name"];
                     $conn=new mysqli($servername,$dbusername,$password1,$dbname);
-                   $sql="select * from department";
+                   $sql="select * from department where dept_name ='".$dept_name."'  ";
                     $result=$conn->query($sql);
                     ?>
                   
@@ -175,6 +176,53 @@ session_start();
 								</div><!--/.stream-list-->
 							</div><!--/.module-body-->
 						</div><!--/.module-->
+            <div class="module-body">
+
+      <br><br>
+     <h1>COURSE LIST</h1><br><br>
+              <?php
+
+include 'db_config.php';
+                       $dept_name= $_SESSION["dept_name"];
+$conn=new mysqli($servername,$dbusername,$password1,$dbname);
+
+$sql="select * from course where dept_name ='".$dept_name."' order by 'course_name'; ";
+
+  $result=$conn->query($sql);?>
+                <table class="table">
+                <table class="table table-striped" border="1" style="width:70%">                  
+            <tr >
+          <th>Course Name </th> 
+             <th>Course Duration </th> 
+            <th>Sem Count</th>                               
+  
+                  
+                </tr>
+<?php
+                  
+   if($result->num_rows>0)
+   {
+     while($row=$result->fetch_assoc())
+     {
+                 
+                  echo "<tbody>";
+                  echo "<tr>";
+                  echo "<td>".$row['course_name']." </td>";
+                   echo "<td>".$row['course_dur']."</td>";
+                   echo "<td>".$row['num_sem']."</td>";
+                    echo "</tr>";
+                echo "</tbody>";
+                }
+              }
+              
+                    ?>               
+                </table>
+          </div><!--/.content-->
+        </div><!--/.span9-->
+
+      </div>
+    </div><!--/.container-->
+  </div><!--/.wrapper-->
 					</div><!--/.content-->
 				</div><!--/.span9-->
 			</div>

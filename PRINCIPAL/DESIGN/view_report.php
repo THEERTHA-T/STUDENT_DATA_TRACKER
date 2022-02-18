@@ -20,24 +20,26 @@ $d_query=mysqli_query($conn,$dept);
             $(document).ready(function() { 
               $("#Btn-check").click(function(){
                
+              $dept_name=$("#dept_name").val();
+              $course_name=$("#course_name").val();
+              $sem=$("#sem").val();
               $sub_name=$("#sub_name").val();
 
             
           $.ajax({
-                  url:"../CODE/view_mark_code.php",
-                  data:{'sub_name' : $sub_name},
+                  url:"../CODE/view_report_code.php",
+                  data:{'dept_name':$dept_name,'course_name':$course_name,'sem':$sem,'sub_name' : $sub_name},
                   dataType:"json",
                   type:"post",
                   success:function(datas) {
+ //console.log("ok"+datas.count1);
+    // console.log(datas.Msg);
+   $("#tot_1").val(datas.tot_1);
+   $("#tot_2").val(datas.tot_2);
+   $("#pass").val(datas.pass);
+   $("#fail").val(datas.fail);
 
-                   $("#table1").empty();
-                   $("#table1").append("<tr><th>REGISTER NUMBER</th><th>INTERNAL MARK</th><th> EXTERNAL MARK</th><th>TOTAL</th></tr>");
-                    // alert(datas.length+datas.Msg);
-                    for(var i=0;i<=datas.length;i++)
-                     {
-      $("#table1").append("<tr><td>"+datas[i].reg_no+"</td><td>"+datas[i].int_mark+"</td><td>"+datas[i].ext_mark+"</td><td>"+datas[i].total+"</td></tr>");
-
-     }
+                 
                   },error:function(d1)
                   {
                     alert("error"+d1);
@@ -62,44 +64,38 @@ $d_query=mysqli_query($conn,$dept);
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
   
-          <div class="wrapper">
+         <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
                     <div class="sidebar">
 
-                        <ul class="widget widget-menu unstyled">
+                       <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                              <li><a href="course.php"><i class="menu-icon icon-bullhorn"></i>Add Course</a>
+                            <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
-                             <li><a href="subject.php"><i class="menu-icon icon-bullhorn"></i>Manage Subject</a>
-                            </li>
-                            <li><a href="assign_tutor.php"><i class="menu-icon icon-bullhorn"></i>Assign Tutor</a>
-                            </li>                                                 
-                    </ul>
-                            <ul class="widget widget-menu unstyled">
-                                  <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark view </a></li>
-                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Internal Mark Report</a>
-                            </li>
-                               
-                                    </li>
-                                                                    </li>
-                                                                      <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                                <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
                             </li>
                              <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
                             </li>
-                                      <li><a href="add_event_1.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>  
-                                 <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
+                            <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
+
+                   
+                               
+                                    </li>
+                                                                    </li>
+                                
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>
                     </div>
                     <!--/.sidebar-->
                 </div>
+                <!--/.span3-->
         <div class="span9">
           <div class="content">
             <div class="module">
@@ -149,7 +145,7 @@ $d_query=mysqli_query($conn,$dept);
                       </div>
                                                           <div class="controls clearfix">
                                           <div class="pull-left">
-                  <a href="view_mark_1.php" class="btn btn-primary pull-left">BACK</a>
+                  <a href="dashboard.php" class="btn btn-primary pull-left">BACK</a>
                 </div>
                                     <button type="button" id="Btn-check" class="btn btn-danger pull-right">CHECK</button>                       </div>                        </form>
       
@@ -161,16 +157,25 @@ $d_query=mysqli_query($conn,$dept);
       </div>
     </div><!--/.container-->
   </div><!--/.wrapper-->
-   <table id="table1" border="2" class="table table-striped" WIDTH="80%">
-                <!-- <table border="2" class="table table-striped">
-                -->
-                  
-           
-
-<!-- </table> -->
-               </table>
-
-
+  <font color="red"><u><h1><center>INTERNAL MARK REPORT<center></h1></u></font>
+                       <div class="module-body">
+                <div class="control-group">
+                      <label class="control-label" for="basicinput"></label>
+                      <div class="controls">
+                        <BR><br>
+                      Total Number of students (series 1):<br> &nbsp;&nbsp;<input type="text" id="tot_1"  readonly="" class="span5" >
+                      </div>
+                       <div class="controls">
+                      Total Number of students (series 2):<br> &nbsp;&nbsp;<input type="text" id="tot_2"  readonly="" class="span5" >
+                      </div>
+                       <div class="controls">
+                         <div class="controls">
+                     Pass Percentage : <br>&nbsp;&nbsp;<input type="text" id="pass"  class="span5" readonly="">
+                      </div>
+                       <div class="controls">
+                      Total Number of Failed Students :<br> &nbsp;&nbsp;<input type="text" id="fail"  class="span5" readonly="" >
+                      </div>
+                    
   <div class="footer">
     <div class="container">      
       <b class="copyright">
