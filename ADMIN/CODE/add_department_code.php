@@ -7,11 +7,15 @@ $dept_name=$_POST['dept_name'];
 $course_count=$_POST['course_count'];
 $ob;
 $conn=new mysqli($servername,$dbusername,$password1,$dbname);
-if($conn->connect_error)
-{
-	$ob=array('Msg'=> 'Connection err');
-	echo json_encode($ob);
-	return;
+
+$sql="select * from department where dept_id='".$dept_id."'";
+$result=$conn ->query($sql);
+if($result->num_rows > 0)
+ {
+  $ob = array('Msg'=> 'Department ID  already exist');
+  $conn->close();
+  echo json_encode($ob);
+  return;
 }
 else
 {

@@ -136,29 +136,14 @@ session_start();
                         </select>                        
                       </div>              
                   
-                      <?php
-                    include 'db_config.php';
-                    $conn=new mysqli($servername,$dbusername,$password1,$dbname);
-                   $sql="select user_name from users";
-                    $result=$conn->query($sql);
-                    ?>
-                  
+                      
+                          <div class="control-group">
+                      <label class="control-label" for="basicinput"></label>
                       <div class="controls">
-                       Head of department : <br>
-                        <select tabindex="1" id="hod"  class="span5">
-                          <option selected="">Select HOD</option>
-                          
-                         <?php if($result->num_rows>0)
-   {
-
-     while($row=$result->fetch_assoc())
-     {
-                                                echo "<option >".$row['user_name']."</option>";
-                                                }
-   }
-   ?>   
-                          
-                        </select>                        
+                       &nbsp;&nbsp;&nbsp; HOD :<br>    
+                        <select tabindex="1" id="hod" name="hod" class="span5">
+                          <option selected="">Select Head of department</option>                          
+                          </select>
                       </div>
                                                           <div class="controls clearfix">
                                         	<div class="pull-left"><br><br>
@@ -173,6 +158,59 @@ session_start();
 			</div>
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
+
+  <div class="module-body">
+
+      <br><br>
+     <h1>HOD LIST</h1><br><br>
+              <?php
+include 'db_config.php';
+
+$conn=new mysqli($servername,$dbusername,$password1,$dbname);
+
+$sql="select * from department order by dept_id; ";
+
+  $result=$conn->query($sql);?>
+                <table class="table">
+                <table class="table table-striped" border="1" style="width:70%">                  
+            <tr >
+          <th>Department ID </th> 
+             <th> Department Name </th> 
+            <th>Course Count</th>
+             <th>HOD  </th>         
+                                
+  
+                  
+                </tr>
+<?php
+                  
+   if($result->num_rows>0)
+   {
+     while($row=$result->fetch_assoc())
+     {
+                 
+                  echo "<tbody>";
+                  echo "<tr>";
+                  echo "<td>".$row['dept_id']." </td>";
+                   echo "<td>".$row['dept_name']."</td>";
+                   echo "<td>".$row['course_count']."</td>";
+                    echo "<td>".$row['hod']."</td>";
+                                      
+                  echo "</tr>";
+                echo "</tbody>";
+                }
+              }
+              
+                    ?>               
+                </table>
+          </div><!--/.content-->
+        </div><!--/.span9-->
+
+      </div>
+    </div><!--/.container-->
+  </div><!--/.wrap=-->
+
+
 	<div class="footer">
 		<div class="container">			 
 			<b class="copyright">
@@ -181,4 +219,22 @@ session_start();
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $('#dept_name').on('change',function(){
+      var dept_name=this.value;
+      //console.log(dept_name);
+      $.ajax({
+        url:'hod_set.php',
+        type:"POST",
+        data:{
+          dept_name:dept_name
+        },
+        success:function(result){
+          $('#hod').html(result);
+          console.log(result);
+        }
+      })
+    
+    });
+  </script>
 </body>
