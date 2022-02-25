@@ -180,7 +180,7 @@ session_start();
                   
                       <div class="controls">
                         Teacher Name : <br>
-                        <select tabindex="1" id="tutor_name"  class="span5">
+                        <select tabindex="1" id="teacher_name"  class="span5">
                           <option selected="">Select Teacher</option>
                           <?php 
                           if($result->num_rows>0)
@@ -203,6 +203,58 @@ session_start();
 								</div><!--/.stream-list-->
 							</div><!--/.module-body-->
 						</div><!--/.module-->
+
+             <div class="module-body">
+
+      <br><br>
+     <h1>SUBJECT LIST</h1><br><br>
+              <?php
+
+include 'db_config.php';
+                       $dept_name= $_SESSION["dept_name"];
+$conn=new mysqli($servername,$dbusername,$password1,$dbname);
+
+$sql="select * from subject where dept_name ='".$dept_name."' order by sem; ";
+
+  $result=$conn->query($sql);?>
+                <table class="table">
+                <table class="table table-striped" border="1" style="width:70%">                  
+            <tr >
+          <th>Course Name </th> 
+             <th>Semester</th> 
+            <th>Subject code</th>                               
+             <th>Subject Name</th> 
+               <th>Teacher Name</th> 
+
+                  
+                </tr>
+<?php
+                  
+   if($result->num_rows>0)
+   {
+     while($row=$result->fetch_assoc())
+     {
+                 
+                  echo "<tbody>";
+                  echo "<tr>";
+                  echo "<td>".$row['course_name']." </td>";
+                   echo "<td>".$row['sem']."</td>";
+                   echo "<td>".$row['sub_code']."</td>";
+                    echo "<td>".$row['sub_name']."</td>";
+                    echo "<td>".$row['teacher_name']."</td>";
+                    echo "</tr>";
+                echo "</tbody>";
+                }
+              }
+              
+                    ?>               
+                </table>
+          </div><!--/.content-->
+        </div><!--/.span9-->
+
+      </div>
+    </div><!--/.container-->
+  </div><!--/.wrapper-->
 					</div><!--/.content-->
 				</div><!--/.span9-->
 			</div>

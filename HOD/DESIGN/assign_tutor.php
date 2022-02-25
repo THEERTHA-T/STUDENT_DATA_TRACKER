@@ -164,7 +164,7 @@ session_start();
                        $dept_name= $_SESSION["dept_name"];
                     include 'db_config.php';
                     $conn=new mysqli($servername,$dbusername,$password1,$dbname);
-                   $sql="select * from users where dept_name ='".$dept_name."'  ";
+                   $sql="select * from users where dept_name ='".$dept_name."' and user_type='Teacher' or user_type='HOD' ";
                     $result=$conn->query($sql);
                     ?>
                   
@@ -195,6 +195,52 @@ session_start();
 								</div><!--/.stream-list-->
 							</div><!--/.module-body-->
 						</div><!--/.module-->
+
+              <div class="module-body">
+
+      <br><br>
+     <h1>TUTOR LIST</h1><br><br>
+              <?php
+
+include 'db_config.php';
+                       $dept_name= $_SESSION["dept_name"];
+$conn=new mysqli($servername,$dbusername,$password1,$dbname);
+
+$sql="select * from tutor where dept_name ='".$dept_name."' order by sem; ";
+
+  $result=$conn->query($sql);?>
+                <table class="table">
+                <table class="table table-striped" border="1" style="width:70%">                  
+            <tr >
+          <th>Course Name </th> 
+             <th>Semester</th> 
+            <th>Tutor Name</th>                               
+           
+
+                  
+                </tr>
+<?php
+                  
+   if($result->num_rows>0)
+   {
+     while($row=$result->fetch_assoc())
+     {
+                 
+                  echo "<tbody>";
+                  echo "<tr>";
+                  echo "<td>".$row['course_name']." </td>";
+                   echo "<td>".$row['sem']."</td>";
+                   echo "<td>".$row['tutor_name']."</td>";
+                                      echo "</tr>";
+                echo "</tbody>";
+                }
+              }
+              
+                    ?>               
+                </table>
+          </div><!--/.content-->
+        </div><!--/.span9-->
+
 					</div><!--/.content-->
 				</div><!--/.span9-->
 			</div>

@@ -6,6 +6,7 @@ $course_name=$_POST['course_name'];
 $sem=$_POST['sem'];
 $sub_code=$_POST['sub_code'];
 $sub_name=$_POST['sub_name'];
+$teacher_name=$_POST['teacher_name'];
 
 $ob;
 $conn=new mysqli($servername,$dbusername,$password1,$dbname);
@@ -17,7 +18,7 @@ if($conn->connect_error)
 }
 else
 {
-    $sql="insert into subject (dept_name,course_name,sem,sub_code,sub_name) values('".$dept_name."','".$course_name."','".$sem."','".$sub_code."','".$sub_name."')";
+    $sql="insert into subject (dept_name,course_name,sem,sub_code,sub_name,teacher_name) values('".$dept_name."','".$course_name."','".$sem."','".$sub_code."','".$sub_name."','".$teacher_name."')";
   
   if($conn->query($sql)=== TRUE)
   {

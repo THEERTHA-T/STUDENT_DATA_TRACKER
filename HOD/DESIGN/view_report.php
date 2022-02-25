@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db_config.php';
 $conn=new mysqli($servername,$dbusername,$password1,$dbname);
 $dept="select distinct * from department";
@@ -110,17 +111,29 @@ $d_query=mysqli_query($conn,$dept);
                 <H1>  <font color="green">              
                  VIEW MARK</font> </H1>
               </div>
-             
-                   <div class="control-group">
-                      <label class="control-label" for="basicinput"></label>
+              <?php
+                    include 'db_config.php';
+                                           $dept_name= $_SESSION["dept_name"];
+                    $conn=new mysqli($servername,$dbusername,$password1,$dbname);
+                   $sql="select * from department where dept_name ='".$dept_name."'  ";
+                    $result=$conn->query($sql);
+                    ?>
+                  
                       <div class="controls">
-                       &nbsp;&nbsp;&nbsp; Department Name :<br>    
-                        &nbsp;&nbsp;&nbsp;<select tabindex="1" id="dept_name"  class="span5">
-                          <option selected="">Select department</option>
-                          <?php while($row=mysqli_fetch_assoc($d_query)): ?>
-                            <option value="<?php echo $row['dept_name']; ?>"> <?php echo $row['dept_name']; ?> </option>
-                          <?php endwhile; ?>
-                          </select>
+                        &nbsp; &nbsp; Department Name : <br>
+                         &nbsp; &nbsp;<select tabindex="1" id="dept_name"  class="span5">
+                           &nbsp; &nbsp;<option selected="">Select Department</option>
+                          <?php 
+                          if($result->num_rows>0)
+                          {
+                            while($row=$result->fetch_assoc())
+                            {
+                              echo "<option>".$row['dept_name']."</option>";
+                            }
+                          }
+                          ?>
+                          
+                        </select>                        
                       </div>
 
               <div class="control-group">

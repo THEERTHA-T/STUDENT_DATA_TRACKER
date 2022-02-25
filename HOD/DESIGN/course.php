@@ -162,10 +162,29 @@ session_start();
                            </select>
                         
                       </div>
-                        <div class="control-group">
+                       <div class="control-group">
                       <label class="control-label" for="basicinput"></label>
                       <div class="controls">
-                       Number of Semester :<br><input type="text"  id="num_sem" placeholder="  Number of Semester " class="span5" >
+                       Number of semester :<br> 
+                        <select tabindex="1" id="num_sem" data-placeholder="Select" class="span5">
+                          <option selected>Select number of sem </option>
+                          <option >1</option>
+                          <option >2</option>   
+                         <option >3</option>                                               
+                          <option >4</option>                                                 
+                          <option >5</option> 
+                           <option >6</option>
+                          <option >7</option>   
+                         <option >8</option>                                               
+                          <option >9</option>                                                 
+                          <option >10</option>        
+                          <option >11</option>
+                          <option >12</option>   
+                         <option >13</option>                                               
+                          <option >14</option>                                                
+                          <option >15</option>                                                       
+                                              
+                           </select>
                         
                       </div>
                                                           <div class="controls clearfix">
