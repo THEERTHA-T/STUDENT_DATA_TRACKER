@@ -102,7 +102,7 @@ session_start();
                 <div class="span6">
                     <div class="middle">                       
                                 <h1><center><font color="green">
-                                   EDIT PROFILE</font></center>
+                                   ADD NOTIFICATION</font></center>
                                 </h1>
                                 <div class="module">
                             <div class="module-head">                               

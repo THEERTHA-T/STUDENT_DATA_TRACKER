@@ -45,7 +45,7 @@ session_start();
                             </li>
                             <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
-                                <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                                <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
                             </li>
                           
                             <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>

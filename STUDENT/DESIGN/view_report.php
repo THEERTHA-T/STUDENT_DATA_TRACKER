@@ -77,7 +77,7 @@ $d_query=mysqli_query($conn,$dept);
                             </li>
                             <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
-                                <li><a href="viewd_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                                <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
                             </li>
                           
                             <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>

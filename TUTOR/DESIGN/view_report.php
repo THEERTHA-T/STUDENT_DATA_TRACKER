@@ -86,7 +86,7 @@ $d_query=mysqli_query($conn,$dept);
                                <li><a href="int_mark_entry.php"><i class="menu-icon icon-book"></i> Internal Mark Entry </a></li>
                                  <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark  View</a></li>
 
-                                 <li><a href="report_generation.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
+                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
                             </li>
                                
                                     </li>
@@ -110,7 +110,7 @@ $d_query=mysqli_query($conn,$dept);
               <div class="module-head">
                 <form method="POST" action="view_mark.php">
                 <H1>  <font color="green">              
-                 VIEW MARK</font> </H1>
+                 REPORT</font> </H1>
               </div>
              
                    <div class="control-group">

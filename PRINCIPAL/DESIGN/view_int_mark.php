@@ -20,22 +20,22 @@ $d_query=mysqli_query($conn,$dept);
             $(document).ready(function() { 
               $("#Btn-check").click(function(){
                
-              $sub_name=$("#sub_name").val();
+            //  $sub_name=$("#sub_name").val();
 
             
           $.ajax({
                   url:"../CODE/view_int_mark_code.php",
-                  data:{'sub_name' : $sub_name},
+                  data:{},
                   dataType:"json",
                   type:"post",
                   success:function(datas) {
 
                    $("#table1").empty();
-                   $("#table1").append("<tr><th>REGISTER NUMBER</th><th>ATTENDANCE</th><th>ASSIGNMENT</th><th>FIRST SERIES MARK</th><th>SECOND SERIES MARK</th><th>TOTAL</th></tr>");
+                   $("#table1").append("<tr><th>REGISTER NUMBER</th><th>SUBJECT NAME</th><th>ATTENDANCE</th><th>ASSIGNMENT</th><th>FIRST SERIES MARK</th><th>SECOND SERIES MARK</th><th>TOTAL</th></tr>");
                     // alert(datas.length+datas.Msg);
                     for(var i=0;i<=datas.length;i++)
                      {
-      $("#table1").append("<tr><td>"+datas[i].reg_no+"</td><td>"+datas[i].attendance+"</td><td>"+datas[i].assignment+"</td><td>"+datas[i].series1+"</td><td>"+datas[i].series2+"</td><td>"+datas[i].total+"</td></tr>");
+      $("#table1").append("<tr><td>"+datas[i].reg_no+"</td><td>"+datas[i].sub_name+"</td><td>"+datas[i].attendance+"</td><td>"+datas[i].assignment+"</td><td>"+datas[i].series1+"</td><td>"+datas[i].series2+"</td><td>"+datas[i].total+"</td></tr>");
 
      }
                   },error:function(d1)
@@ -129,14 +129,7 @@ $d_query=mysqli_query($conn,$dept);
                           </select>
                       </div>
 
-                      <div class="control-group">
-                      <label class="control-label" for="basicinput"></label>
-                      <div class="controls">
-                       &nbsp;&nbsp;&nbsp; Subject :<br>    
-                        &nbsp;&nbsp;&nbsp;<select tabindex="1" id="sub_name" name="sub_name" class="span5">
-                          <option selected="">Select subject</option>                          
-                          </select>
-                      </div>
+                   
                                                           <div class="controls clearfix">
                                           <div class="pull-left">
                   <a href="view_mark_1.php" class="btn btn-primary pull-left">BACK</a>
