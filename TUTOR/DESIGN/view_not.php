@@ -39,7 +39,7 @@ session_start();
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
   
-<div class="wrapper">
+ <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
@@ -51,16 +51,17 @@ session_start();
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                             <li><a href="course.php"><i class="menu-icon icon-bullhorn"></i>Add Course</a>
-                            </li> 
-                             <li><a href="subject.php"><i class="menu-icon icon-bullhorn"></i>Manage Subject</a>
+                            <li><a href="student_registration.php"><i class="menu-icon icon-bullhorn"></i>Student Registration</a>
                             </li>
-                            <li><a href="assign_tutor.php"><i class="menu-icon icon-bullhorn"></i>Assign Tutor</a>
-                            </li>                                                 
+                            <li><a href="mark_entry.php"><i class="menu-icon icon-book"></i> Mark Entry </a></li>
+
+                            
                     </ul>
                             <ul class="widget widget-menu unstyled">
-                                  <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark view </a></li>
-                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>View Report</a>
+                               <li><a href="int_mark_entry.php"><i class="menu-icon icon-book"></i> Internal Mark Entry </a></li>
+                                 <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark  View</a></li>
+
+                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
                             </li>
                                
                                     </li>
@@ -69,7 +70,8 @@ session_start();
                             </li>
                              <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
                             </li>
-                                    <li><a href="add_event.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>  
+                                  <li><a href="add_event.php"><i class="menu-icon icon-paste"></i>Add Events</a></li>   
+                                      <li><a href="extra.php"><i class="menu-icon icon-paste"></i>Add extra curricular activity</a></li>         
                                  <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>

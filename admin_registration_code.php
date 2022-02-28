@@ -20,7 +20,7 @@ if($conn->connect_error)
   echo json_encode($ob);
   return;
 }
-$sql="select * from users where user_type='OfficeAdmin'";
+$sql="select * from users where user_type='OfficeAdmin' and college_name='".$college_name."'";
 $result=$conn ->query($sql);
 if($result->num_rows > 0)
  {

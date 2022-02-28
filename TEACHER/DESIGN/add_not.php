@@ -67,40 +67,44 @@ session_start();
                 </div>
             </div>
         </div>
-   <div class="wrapper">
+  <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
                     <div class="sidebar">
 
-                       <ul class="widget widget-menu unstyled">
+                        <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                                <li><a href="stud_details.php"><i class="menu-icon icon-bullhorn"></i>View Student details</a>
+                              <li><a href="stud_details.php"><i class="menu-icon icon-bullhorn"></i>View Student details</a>
                             </li>       
-                            <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
-                            </li>
-                                <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
-                            </li>
-                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
-                            </li>
-                            <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
+                            <li><a href="mark_entry.php"><i class="menu-icon icon-book"></i> Mark Entry </a></li>
 
-                   
+                            
+                    </ul>
+                            <ul class="widget widget-menu unstyled">
+                               <li><a href="int_mark_entry.php"><i class="menu-icon icon-book"></i> Internal Mark Entry </a></li>
+                                 <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark  View</a></li>
+
+                                 <li><a href="view_report.php"><i class="menu-icon icon-bullhorn"></i>Report Generation</a>
+                            </li>
                                
                                     </li>
                                                                     </li>
-                                
+                                                                      <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                            </li>
+                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
+                            </li>
+                                 <li><a href="about_us.php"><i class="menu-icon icon-paste"></i>About us</a></li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>
                     </div>
                     <!--/.sidebar-->
                 </div>
-                <!--/.span3-->
                 <div class="span6">
                     <div class="middle">                       
                                 <h1><center><font color="green">
