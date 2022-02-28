@@ -82,7 +82,9 @@ $d_query=mysqli_query($conn,$dept);
                              <li><a href="subject.php"><i class="menu-icon icon-bullhorn"></i>Manage Subject</a>
                             </li>
                             <li><a href="assign_tutor.php"><i class="menu-icon icon-bullhorn"></i>Assign Tutor</a>
-                            </li>                                                 
+                            </li>   
+                             <li><a href="stud_details.php"><i class="menu-icon icon-bullhorn"></i>View Student details</a>
+                            </li>                                              
                     </ul>
                             <ul class="widget widget-menu unstyled">
                                   <li><a href="view_mark_1.php"><i class="menu-icon icon-book"></i>  Mark view </a></li>

@@ -86,7 +86,8 @@ $d_query=mysqli_query($conn,$dept);
                                
                                     </li>
                                                                     </li>
-                                
+                                 <li><a href="cb.php"><i class="menu-icon icon-bullhorn"></i>Complaint Box</a>
+                            </li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>

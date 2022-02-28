@@ -19,28 +19,27 @@ session_start();
             <script >
             $(document).ready(function() { 
               $("#Btn_save").click(function(){
-              
+                 $dept_name=$("#dept_name").val();
+                $course_name=$("#course_name").val();
                 $user_name=$("#user_name").val();
-                $user_type=$("#user_type").val();
+                $matter=$("#matter").val();
                 $date1=$("#date1").val();
-                $sub=$("#sub").val();
-              $msg=$("#msg").val();
               
-  if($user_name==""||$user_type==""||$date1==""||$sub==""||$msg=="") 
+  if($dept_name==""||$course_name==""||$user_name==""||$matter==""||$date1=="") 
              { 
                alert("Mandatory Fields Missing");
                return;
                }
              
                 $.ajax({
-                  url:"../CODE/add_not_code.php",
-                  data:{'user_name' : $user_name,'user_type' : $user_type,'date1' : $date1,'sub' : $sub,'msg':$msg},
+                  url:"../CODE/cb_code.php",
+                  data:{'dept_name' : $dept_name,'course_name' : $course_name,'user_name' : $user_name,'matter' : $matter,'date1':$date1},
                   dataType:"json",
                   type:"post",
                   success:function(datas) {
 
                     alert(datas.Msg);
-                    window.location="add_not.php";
+                    window.location="cb.php";
                   },error:function(d1)
                   {
                     alert(""+d1);
@@ -79,21 +78,19 @@ session_start();
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                                <li><a href="stud_details.php"><i class="menu-icon icon-bullhorn"></i>View Student details</a>
-                            </li>       
-                            <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
+                            <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
-                                <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
+                                <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
                             </li>
-                             <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
-                            </li>
+                          
                             <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
-
+<li><a href="all_sem_mark.php"><i class="menu-icon icon-book"></i> All Sem Mark</a></li>
                    
                                
                                     </li>
                                                                     </li>
-                                
+                                 <li><a href="cb.php"><i class="menu-icon icon-bullhorn"></i>Complaint Box</a>
+                            </li>
                                <li><a href="logout.php"><i class="menu-icon icon-bullhorn"></i>Logout</a>
                             </li>
                             </ul>
@@ -104,7 +101,7 @@ session_start();
                 <div class="span6">
                     <div class="middle">                       
                                 <h1><center><font color="green">
-                                   EDIT PROFILE</font></center>
+                                   RAISE YOUR COMPLAINT</font></center>
                                 </h1>
                                 <div class="module">
                             <div class="module-head">                               
@@ -113,23 +110,24 @@ session_start();
                             <div class="module-body">
                               <div class="control-group">                              
                                             <div class="controls">
-                                               User Type :  <input type="text" id="user_type" placeholder="UserType" class="span5" value='<?php echo $_SESSION['user_type'];?>' >                                                
+                                               Department Name :  <input type="text" id="dept_name" placeholder="dept_name" class="span5" value='<?php echo $_SESSION['dept_name'];?>' >                                                
                                             </div>
                                           
                                             <div class="controls">
-                                                User Name : <input  type="text" id="user_name"  placeholder="UserName" class="span5" value=<?php echo $_SESSION['user_name'];?>  >
+                                                Course Name : <input  type="text" id="course_name"  placeholder="course_name" class="span5" value=<?php echo $_SESSION['course_name'];?>  >
                                         </div> 
+                                         <div class="controls">
+                                                Student Name : <input  type="text" id="user_name"  placeholder="user_name" class="span5" value=<?php echo $_SESSION['user_name'];?>  >
+                                        </div>
                                                       
                                         <div class="controls">
-                                              Subject :<input type="text" id="sub" placeholder="subject" class="span5" >          
+                                              Matter :<input type="text" id="matter" placeholder="subject" class="span5" >          
                                             </div>
                                             <div class="controls">
                                                  Date :<input type="Date" id="date1" placeholder=" Date" class="span5" >
                                                 
                                             </div>
-                                              <div class="controls">
-                                                Message : <br> <input  type="text" id="msg"  placeholder="message" class="span5"  >
-                                        </div> 
+                                         
                                             
                                             <div class="control-group">
                                   <div class="controls clearfix">

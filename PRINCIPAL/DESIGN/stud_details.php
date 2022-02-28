@@ -20,26 +20,24 @@ $d_query=mysqli_query($conn,$dept);
             $(document).ready(function() { 
               $("#Btn-check").click(function(){
                
-              $dept_name=$("#dept_name").val();
-              $course_name=$("#course_name").val();
-              $sem=$("#sem").val();
-              $sub_name=$("#sub_name").val();
+              //$sub_name=$("#sub_name").val();
 
             
           $.ajax({
-                  url:"../CODE/view_report_code.php",
-                  data:{'dept_name':$dept_name,'course_name':$course_name,'sem':$sem,'sub_name' : $sub_name},
+                  url:"../CODE/stud_details_code.php",
+                  data:{},
                   dataType:"json",
                   type:"post",
                   success:function(datas) {
- //console.log("ok"+datas.count1);
-    // console.log(datas.Msg);
-   $("#tot_1").val(datas.tot_1);
-   $("#tot_2").val(datas.tot_2);
-   $("#pass").val(datas.pass);
-   $("#fail").val(datas.fail);
 
-                 
+                   $("#table1").empty();
+                   $("#table1").append("<tr><th>REGISTER NUMBER</th><th>STUDENT NAME</th><th>ADMISSION NUMBER</th><th> ADMISSION TYPE</th><th>ADMISSION DATE</th><th>EMAIL ID</th><th>PHONE NUMBER</th><th>DATE OF BIRTH</th><th>PLACE</th></tr>");
+                    // alert(datas.length+datas.Msg);
+                    for(var i=0;i<=datas.length;i++)
+                     {
+      $("#table1").append("<tr><td>"+datas[i].reg_no+"</td><td>"+datas[i].user_name+"</td><td>"+datas[i].admn_no+"</td><td>"+datas[i].admn_type+"</td><td>"+datas[i].admn_date+"</td><td>"+datas[i].email_id+"</td><td>"+datas[i].phone_no+"</td><td>"+datas[i].dob+"</td><td>"+datas[i].place+"</td></tr>");
+
+     }
                   },error:function(d1)
                   {
                     alert("error"+d1);
@@ -64,13 +62,12 @@ $d_query=mysqli_query($conn,$dept);
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
   
-         <div class="wrapper">
+           <div class="wrapper">
         <div class="container">
             <div class="row">
                 <div class="span3">
                     <div class="sidebar">
-
-                       <ul class="widget widget-menu unstyled">
+  <ul class="widget widget-menu unstyled">
 
                             <li class="active"><a href="dashboard.php"><i class="menu-icon icon-dashboard"></i>Home
                             </a></li>
@@ -78,15 +75,13 @@ $d_query=mysqli_query($conn,$dept);
                             </li>
                                 <li><a href="stud_details.php"><i class="menu-icon icon-bullhorn"></i>View Student details</a>
                             </li>
-                            <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
+                            <li><a href="view_mark.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
                                 <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>
                             </li>
                              <li><a href="view_not.php"><i class="menu-icon icon-bullhorn"></i>View Notifications</a>
                             </li>
-                            <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>
-
-                   
+                            <li><a href="view_report.php"><i class="menu-icon icon-book"></i> view Report</a></li>                  
                                
                                     </li>
                                                                     </li>
@@ -97,14 +92,13 @@ $d_query=mysqli_query($conn,$dept);
                     </div>
                     <!--/.sidebar-->
                 </div>
-                <!--/.span3-->
         <div class="span9">
           <div class="content">
             <div class="module">
               <div class="module-head">
                 <form method="POST" action="view_mark.php">
                 <H1>  <font color="green">              
-                 VIEW MARK</font> </H1>
+                 STUDENT DETAILS</font> </H1>
               </div>
              
                    <div class="control-group">
@@ -137,17 +131,17 @@ $d_query=mysqli_query($conn,$dept);
                           </select>
                       </div>
 
-                      <div class="control-group">
+                      <!-- <div class="control-group">
                       <label class="control-label" for="basicinput"></label>
                       <div class="controls">
                        &nbsp;&nbsp;&nbsp; Subject :<br>    
                         &nbsp;&nbsp;&nbsp;<select tabindex="1" id="sub_name" name="sub_name" class="span5">
                           <option selected="">Select subject</option>                          
                           </select>
-                      </div>
+                      </div> -->
                                                           <div class="controls clearfix">
                                           <div class="pull-left">
-                  <a href="dashboard.php" class="btn btn-primary pull-left">BACK</a>
+                  <a href="view_mark_1.php" class="btn btn-primary pull-left">BACK</a>
                 </div>
                                     <button type="button" id="Btn-check" class="btn btn-danger pull-right">CHECK</button>                       </div>                        </form>
       
@@ -159,25 +153,16 @@ $d_query=mysqli_query($conn,$dept);
       </div>
     </div><!--/.container-->
   </div><!--/.wrapper-->
-  <font color="red"><u><h1><center>INTERNAL MARK REPORT<center></h1></u></font>
-                       <div class="module-body">
-                <div class="control-group">
-                      <label class="control-label" for="basicinput"></label>
-                      <div class="controls">
-                        <BR><br>
-                      Total Number of students (series 1):<br> &nbsp;&nbsp;<input type="text" id="tot_1"  readonly="" class="span5" >
-                      </div>
-                       <div class="controls">
-                      Total Number of students (series 2):<br> &nbsp;&nbsp;<input type="text" id="tot_2"  readonly="" class="span5" >
-                      </div>
-                       <div class="controls">
-                         <div class="controls">
-                     Pass Percentage : <br>&nbsp;&nbsp;<input type="text" id="pass"  class="span5" readonly="">
-                      </div>
-                       <div class="controls">
-                      Total Number of Failed Students :<br> &nbsp;&nbsp;<input type="text" id="fail"  class="span5" readonly="" >
-                      </div>
-                    
+   <table id="table1" border="2" class="table table-striped" WIDTH="80%">
+                <!-- <table border="2" class="table table-striped">
+                -->
+                  
+           
+
+<!-- </table> -->
+               </table>
+
+
   <div class="footer">
     <div class="container">      
       <b class="copyright">

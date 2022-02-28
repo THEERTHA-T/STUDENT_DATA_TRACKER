@@ -53,6 +53,8 @@ if(!$_SESSION["user_name"])
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
+                                <li><a href="stud_details.php"><i class="menu-icon icon-bullhorn"></i>View Student details</a>
+                            </li>
                             <li><a href="view_mark_1.php"><i class="menu-icon icon-bullhorn"></i>Mark view</a>
                             </li>
                                 <li><a href="add_not.php"><i class="menu-icon icon-bullhorn"></i>Add Notifications</a>

@@ -74,7 +74,8 @@ $d_query=mysqli_query($conn,$dept);
                             </a></li>
                              <li><a href="edit_profile.php"><i class="menu-icon icon-bullhorn"></i>Edit Profile</a>
                             </li>
-                          
+                              <li><a href="stud_details.php"><i class="menu-icon icon-bullhorn"></i>View Student details</a>
+                            </li>       
                             <li><a href="mark_entry.php"><i class="menu-icon icon-book"></i> Mark Entry </a></li>
 
                             
